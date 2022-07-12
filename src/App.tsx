@@ -76,7 +76,7 @@ function App() {
 
   useEffect(() => {
     async function getData(){
-      const res = await axios.get('http://localhost:5000/word-list');
+      const res = await axios.get('https://young-earth-86344.herokuapp.com/word-list');
       const data = res.data;
       setSolution(data[Math.floor(Math.random() * data.length)]);
       setWordList(data);
