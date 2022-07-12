@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+:root {
+  --tile-gap: 1.5vw;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root {
+  height: 100vh;
+  display: grid;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.words-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1vw;
+  padding: 1vw;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 2vw;
 }
 
-.App-link {
-  color: #61dafb;
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0, 1fr));
+  gap: .5vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.keys {
+  text-align: center;
+  padding: .5vw;
+  border: 1px solid #eaeaea;
+  border-radius: .5vw;
+  font-size: 1.1vw;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
+  -webkit-transition: background-color .3s ease-in-out;
+  -ms-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+}
+
+.keys:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.no-border {
+  border: 1px solid transparent;
+  cursor: default;
+}
+
+.no-border:hover {
+  background-color: transparent;
+}
+
+.true {
+  background-color: lightgreen;
+ 
+} 
+
+.wrong {
+  background-color: lightpink;
+}
+
+.miss {
+  background-color: lightgoldenrodyellow;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --tile-gap: 3.5vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .keys {
+    font-size: 4vw;
+    padding: 1vw 1.5vw;
   }
+
+  .keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: 1vw;
+  }
+  
 }

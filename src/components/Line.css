@@ -1,0 +1,21 @@
+.line {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5vw;
+}
+
+.tile {
+    border: 1px solid #eaeaea;
+    padding: var(--tile-gap);
+    width: var(--tile-gap);
+    height: var(--tile-gap);
+    text-align: center;
+    font-size: var(--tile-gap);
+    line-height: var(--tile-gap);
+    border-radius: 1vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: background-color .3s ease-in-out;
+    -ms-transition: background-color .3s ease-in-out;
+    transition: background-color .3s ease-in-out;
+}
