@@ -1,14 +1,28 @@
-export default function Keyboard({ characterLists, handleKeyInput } : any){
+import styles from './Keyboard.module.css';
+
+export default function Keyboard({ characterLists, handleKeyInput, gameOver } : any){
     function triggerKeydown(key: string){
-        handleKeyInput(new KeyboardEvent('keydown', { key: key }));
+        if (!gameOver)
+            handleKeyInput(new KeyboardEvent('keydown', { key: key }));
+    }
+
+    function getClassName(className: string){
+        const classList = className.split(' ');
+        let result = "";
+
+        classList.forEach(className => {
+            return result += (" " + styles[className]);
+        })
+
+        return result = result.substring(1);
     }
 
     return (
-        <div className="keyboard">
+        <div className={ styles.keyboard }>
             {
                 Object.keys(characterLists).map((key, index) => {
                     return (
-                      <div className={ characterLists[key].className } key={ key } style={{ gridColumn: `span ${ characterLists[key].size} / span ${ characterLists[key].size}` }}  onClick={ () => triggerKeydown(key) }>{ characterLists[key].logo }</div>
+                      <div className={ getClassName(characterLists[key].className) } key={ key } style={{ gridColumn: `span ${ characterLists[key].size} / span ${ characterLists[key].size}` }}  onClick={ () => triggerKeydown(key) }>{ characterLists[key].logo }</div>
                     )
                 })
             }

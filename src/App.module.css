@@ -1,0 +1,80 @@
+:root {
+  --tile-gap: 1.5vw;
+  --border-style: 1px solid #eaeaea;
+
+  --true-color: lightgreen;
+  --wrong-color: lightpink;
+  --miss-color: lightgoldenrodyellow;
+}
+
+#root {
+  height: 100vh;
+  display: grid;
+}
+
+.word-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+  padding: 1vw;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  width: 100vw;
+  height: 100vh;
+}
+
+.true {
+  background-color: var(--true-color);
+ 
+} 
+
+.wrong {
+  background-color: var(--wrong-color);
+}
+
+.miss {
+  background-color: var(--miss-color);
+}
+
+.notification-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  position: absolute;
+  top: 3vh;
+  font-weight: 600;
+  font-size: 1.2vw;
+}
+
+.notification-card {
+  border: var(--border-style);
+  padding: .5vw 2vw;
+  border-radius: .5vw;
+  background-color: white;
+  transition: all .3 linear;
+}
+
+@media only screen and (max-width: 600px) {
+  :root {
+    --tile-gap: 3.5vw;
+  }
+
+  .notification-container {
+    font-size: 4vw;
+  }
+
+  .notification-card {
+    border: var(--border-style);
+    padding: 2vw 4vw;
+    border-radius: 2vw;
+    background-color: white;
+    transition: all .3 linear;
+  }
+  
+}

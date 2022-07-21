@@ -1,0 +1,134 @@
+
+
+.definition-container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: .3vw;
+    padding: 1vw;
+    background-color: white;
+
+    font-size: .8vw;
+    width: 50vw;
+    min-height: 50vh;
+}
+
+.win {
+    box-shadow:
+    -1vw -1vw 0 -.5vw var(--true-color),
+    1vw 1vw 0 -.5vw var(--true-color)
+}
+
+.lose {
+    box-shadow:
+    -1vw -1vw 0 -.5vw var(--wrong-color),
+    1vw 1vw 0 -.5vw var(--wrong-color)
+}
+
+
+.border-line {
+    border-top: 3px solid black;
+    margin: 1vw 0;
+}
+
+.wordDefinition {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #a09f9f90;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    font-size: 2.5vw;
+    font-weight: 600;
+    align-items: center;
+    gap: .5vw;
+}
+
+.phonetics {
+    display: flex;
+    font-size: 1.5vw;
+    font-weight: 600;
+    align-items: center;
+    gap: .5vw;
+}
+
+.volume {
+    font-size: 1.25vw;
+    font-weight: normal;
+    color: #929292;
+    margin-top: .3vw;
+    cursor: pointer;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+.definition {
+    margin-left: 1vw;
+    display: flex;
+    flex-direction: row;
+    gap: .5vw;
+}
+
+.definitionExample {
+    color: #929292;;
+}
+
+@media only screen and (max-width: 600px) {
+    .definition-container {
+        gap: 1.5vw;
+        padding: 4vw;
+        margin: 6vw;
+        font-size: 2.5vw;
+
+        width: 60vw;
+        min-height: 40vh;
+    }
+
+    .win {
+        box-shadow:
+        -3vw -3vw 0 -.5vw var(--true-color),
+        3vw 3vw 0 -.5vw var(--true-color)
+    }
+    
+    .lose {
+        box-shadow:
+        -3vw -3vw 0 -.5vw var(--wrong-color),
+        3vw 3vw 0 -.5vw var(--wrong-color)
+    }
+
+    .title {
+        font-size: 6vw;
+        gap: 1vw;
+    }
+
+    .phonetics {
+        font-size: 4vw;
+        gap: 1vw;
+    }
+
+    .volume {
+        font-size: 2.5vw;
+        font-weight: normal;
+        color: #929292;
+        margin-top: 1vw;
+        cursor: pointer;
+    }
+    
+}

@@ -1,0 +1,45 @@
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: .5vw;
+}
+
+.keys {
+  text-align: center;
+  padding: 0.5vw;
+  border: var(--border-style);
+  border-radius: 0.5vw;
+  font-size: 1.1vw;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-weight: bold;
+  -webkit-transition: background-color 0.7s ease-in-out;
+  -ms-transition: background-color 0.7s ease-in-out;
+  transition: background-color 0.7s ease-in-out;
+}
+
+.keys:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+.no-border {
+  border: 1px solid transparent;
+  cursor: default;
+}
+
+.no-border:hover {
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+  .keys {
+    font-size: 4vw;
+    padding: 1vw 1.5vw;
+  }
+
+  .keyboard {
+    display: grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: 1vw;
+  }
+}

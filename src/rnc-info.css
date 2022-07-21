@@ -1,0 +1,18 @@
+.rnc__notification-item--info {
+  background-color: #ffffff;
+  border-left: 8px solid #cfcfcf;
+}
+.rnc__notification-item--info .rnc__notification-timer {
+  background-color: #cfcfcf;
+}
+.rnc__notification-item--info .rnc__notification-timer-filler {
+  background-color: rgb(136, 136, 136);
+}
+.rnc__notification-item--info .rnc__notification-close-mark {
+  background-color: #cfcfcf;
+  color: black;
+}
+
+.rnc__notification-message {
+  color: black;
+}

@@ -1,0 +1,54 @@
+.rules-container {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: .5vw;
+    padding: 1vw;
+    border: var(--border-style);
+    border-radius: 1vw;
+    background-color: white;
+
+    font-size: .8vw;
+}
+
+.border-line {
+    border-top: var(--border-style);
+}
+
+.rules {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #a09f9f90;
+    cursor: pointer;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    .rules-container {
+        gap: 2vw;
+        padding: 4vw;
+        border-radius: 2vw;
+        margin: 4vw;
+        font-size: 2.5vw;
+    }
+}

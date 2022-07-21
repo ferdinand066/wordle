@@ -1,14 +1,15 @@
-import './Line.css';
+import styles from '../App.module.css';
+import lineStyles from './Line.module.css';
 
 const TILE_SIZE = 5;
 
-export default function Line({ solution, attempWord, isCurrent } : any): JSX.Element {
+export default function Line({ solution, attempWord, isCurrent = false, parentClass = '', isExample = false } : any): JSX.Element {
     const data = [];
     const tiles : JSX.Element[] = [];
 
     for (let i = 0; i < TILE_SIZE; i++){
         data.push({
-            className: 'tile',
+            className: lineStyles.tile,
             character: '',
         });
     }
@@ -23,11 +24,13 @@ export default function Line({ solution, attempWord, isCurrent } : any): JSX.Ele
         if (isCurrent) continue;
 
         if (attempWord[i] === solution[i]){
-            data[i].className += ' true'
+            data[i].className += (' ' + styles.true);
         } else if (solution.includes(attempWord[i])){
-            data[i].className += ' miss'
+            data[i].className += (' ' + styles.miss);
+        } else if (isExample){
+            continue;
         } else {
-            data[i].className += ' wrong'
+            data[i].className += (' ' + styles.wrong);
         }
     }
 
@@ -41,7 +44,7 @@ export default function Line({ solution, attempWord, isCurrent } : any): JSX.Ele
     }
 
     return (
-        <div className="line">
+        <div className={ lineStyles.line + ' ' + parentClass }>
             {
                 tiles.map(tile => {
                     return tile;
