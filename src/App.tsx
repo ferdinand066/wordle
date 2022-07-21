@@ -136,7 +136,6 @@ function App() {
       );
       const data = res.data;
       setSolution(data[Math.floor(Math.random() * data.length)]);
-      setSolution("balms");
       setWordList(data);
     }
 
@@ -170,9 +169,6 @@ function App() {
           );
         })}
       </div>
-      {solution}
-      {gameOver && isWin ? "You win" : ""}
-      {gameOver && !isWin ? "You lose" : ""}
       <Keyboard
         characterLists={characterLists}
         handleKeyInput={handleKeyInput}
