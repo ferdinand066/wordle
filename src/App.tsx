@@ -189,7 +189,6 @@ function App() {
           );
         })}
       </div>
-      { solution }
       <Keyboard
         characterLists={characterLists}
         handleKeyInput={handleKeyInput}
