@@ -25,7 +25,6 @@ export default function Keyboard({ characterLists, handleKeyInput, gameOver } : 
         <div className={ styles.keyboard }>
             {
                 Object.keys(characterLists).map((key, index) => {
-                    console.log(characterLists[key])
                     return (
                       <div className={ getClassName(characterLists[key].className) } key={ key } style={{ gridColumn: `span ${ characterLists[key].size} / span ${ characterLists[key].size}` }}  onClick={ () => triggerKeydown(key) }>{ characterLists[key].logo }</div>
                     )

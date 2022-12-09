@@ -10,6 +10,7 @@ import "react-notifications-component/dist/theme.css";
 import "./rnc-info.css";
 import Rules from "./components/Rules";
 import WordDefinition from "./components/WordDefinition";
+import words from "./data/data";
 
 function App() {
   const [solution, setSolution] = useState("");
@@ -131,17 +132,36 @@ function App() {
 
   useEffect(() => {
     async function getData() {
-      const res = await axios.get(
-        "https://young-earth-86344.herokuapp.com/word-list"
-      );
-      const data = res.data;
-      setSolution(data[Math.floor(Math.random() * data.length)]);
+      const data = words;
       setWordList(data);
     }
 
     getData();
     setCharacterLists(initializeCharacter());
   }, []);
+
+  useEffect(() => {
+    if (wordList.length === 0) return;
+    async function checkValidWord(){
+      let isValid = false;
+      while (!isValid){
+        try {
+          const tempWord = wordList[Math.floor(Math.random() * wordList.length)];
+          await axios.get(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${ tempWord }`
+          );
+          isValid = true;
+          setSolution(tempWord);
+        } catch(e) {
+          console.log(e)
+        }
+      }
+
+
+    }
+
+    checkValidWord();
+  }, [wordList]);
 
   return (
     <div className={styles.App}>
@@ -169,6 +189,7 @@ function App() {
           );
         })}
       </div>
+      { solution }
       <Keyboard
         characterLists={characterLists}
         handleKeyInput={handleKeyInput}

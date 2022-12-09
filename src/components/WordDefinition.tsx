@@ -51,7 +51,7 @@ export default function WordDefinition({ solution, isWin }: any) {
   }
 
   return ready ? (
-    <div className={styles.wordDefinition + " animate__animated animate__fadeIn animate__delay-5s"}>
+    <div className={styles.wordDefinition + " animate__animated animate__fadeIn animate__delay-3s"}>
       <div className={styles.overlay}></div>
       <div
         className={
