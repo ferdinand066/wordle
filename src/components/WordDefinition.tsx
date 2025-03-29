@@ -51,7 +51,12 @@ export default function WordDefinition({ solution, isWin }: any) {
   }
 
   return ready ? (
-    <div className={styles.wordDefinition + " animate__animated animate__fadeIn animate__delay-3s"}>
+    <div
+      className={
+        styles.wordDefinition +
+        " animate__animated animate__fadeIn animate__delay-3s"
+      }
+    >
       <div className={styles.overlay}></div>
       <div
         className={
@@ -79,14 +84,14 @@ export default function WordDefinition({ solution, isWin }: any) {
         <div className={styles["border-line"]}></div>
 
         {data.meanings.slice(0, 3).map((meaning: any, meaningIndex: number) => {
-          console.log(meaning);
           return (
             <div key={meaningIndex}>
               <span>
                 <em>{meaning.partOfSpeech}</em>
               </span>
-              {meaning.definitions.slice(0, 3).map(
-                (definition: any, definitionIndex: number) => {
+              {meaning.definitions
+                .slice(0, 3)
+                .map((definition: any, definitionIndex: number) => {
                   return (
                     <div key={definitionIndex} className={styles.definition}>
                       <span>{definitionIndex + 1 + ". "}</span>
@@ -102,11 +107,12 @@ export default function WordDefinition({ solution, isWin }: any) {
                       </div>
                     </div>
                   );
-                }
-              )}
+                })}
             </div>
           );
         })}
+
+        <button className={styles["try-again-button"]} type="button" onClick={() => window.location.reload()}>Try Again</button>
       </div>
     </div>
   ) : (

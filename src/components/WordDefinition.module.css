@@ -90,6 +90,36 @@
     color: #929292;;
 }
 
+.try-again-button {
+    display: block; /* Ensures it's a block element for better alignment */
+    margin: 20px auto 0; /* Centers it horizontally and adds top margin */
+    width: 30%;
+    min-width: 200px;
+    max-width: 300px; /* Optional: Prevents it from becoming too wide */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #ff4d4f; /* Red color for a retry button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.try-again-button:hover {
+    background-color: #ff7875; /* Lighter red on hover */
+    transform: scale(1.05);
+}
+
+.try-again-button:active {
+    background-color: #d9363e; /* Darker red when clicked */
+    transform: scale(0.98);
+}
+
 @media only screen and (max-width: 600px) {
     .definition-container {
         gap: 1.5vw;
